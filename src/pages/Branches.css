@@ -1,0 +1,544 @@
+
+/* =========================================
+   SHARK SPORTS ACADEMY - BRANCHES PAGE
+========================================= */
+
+.branches-page,
+.branches-page * {
+  box-sizing: border-box;
+}
+
+.branches-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #101010;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.branches-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 720px;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #032b71;
+}
+
+.branches-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.branches-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  animation: branchesHeroZoom 1.5s ease both;
+}
+
+.branches-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 18, 68, 0.86) 0%,
+    rgba(0, 58, 120, 0.60) 52%,
+    rgba(0, 173, 190, 0.35) 100%
+  );
+}
+
+.branches-hero-content {
+  width: min(100% - 90px, 1380px);
+  margin: 25px auto 0;
+  color: #ffffff;
+  animation: branchesReveal 1s ease both;
+}
+
+.branches-hero-content h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(36px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 17px;
+}
+
+.branches-hero-content p {
+  max-width: 510px;
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 21px;
+}
+
+.branches-admission-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 7px 8px 7px 19px;
+  border-radius: 40px;
+  background: #04b8d5;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.branches-admission-btn span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #071b76;
+}
+
+.branches-admission-btn:hover {
+  transform: translateY(-3px);
+  background: #008eae;
+}
+
+.branches-wave {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  z-index: 3;
+  width: 100%;
+  height: 100px;
+}
+
+.branches-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================
+   MAIN BRANCHES SECTION
+========================================= */
+
+.branches-main {
+  width: min(100% - 90px, 1380px);
+  margin: 0 auto;
+  padding: 28px 0 38px;
+}
+
+.branches-heading {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.branches-heading h2 {
+  color: #07194e;
+  font-family: var(--heading-font);
+  font-size: 33px;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+.branches-heading p {
+  color: #151515;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   BRANCH GRID
+========================================= */
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 13px;
+  align-items: stretch;
+}
+
+/* =========================================
+   BRANCH CARD
+========================================= */
+
+.branch-card {
+  min-width: 0;
+  height: 600px;
+  min-height: 600px;
+  padding: 17px 13px 16px;
+  border-radius: 34px;
+  background: #e3f6fa;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.22);
+  animation: branchCardReveal 0.8s ease both;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 9px 22px rgba(0, 37, 95, 0.13);
+}
+
+/* =========================================
+   SCHOOL IMAGE AND MAP
+========================================= */
+
+.branch-images {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38%;
+  gap: 10px;
+  height: 185px;
+  margin-bottom: 16px;
+}
+
+.branch-school-image,
+.branch-map {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 29px;
+  background: #d2ebf4;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.branch-school-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.branch-card:hover .branch-school-image img {
+  transform: scale(1.05);
+}
+
+.branch-map {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 29px;
+  background: #d2ebf4;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.branch-map img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.branch-card:hover .branch-map img {
+  transform: scale(1.06);
+}
+
+/* =========================================
+   BRANCH NAME
+========================================= */
+
+.branch-card h3 {
+  color: #111111;
+  font-family: var(--heading-font);
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.branch-location {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13px;
+  margin-bottom: 9px;
+  min-height: 30px;
+}
+
+.branch-icon {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #071b76;
+}
+
+/* =========================================
+   TIMINGS
+========================================= */
+
+.branch-subheading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 5px 0 7px;
+  color: #071b76;
+}
+
+.branch-subheading strong {
+  font-family: var(--heading-font);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.branch-timings {
+  padding-left: 39px;
+}
+
+.branch-timings p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  margin: 5px 0;
+  color: #111111;
+}
+
+/* =========================================
+   ACTIVITIES
+========================================= */
+
+.branch-activities-title {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.branch-activities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  padding: 10px 12px;
+  min-height: 52px;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.branch-activities span {
+  position: relative;
+  padding: 2px 6px;
+  color: #111111;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.branch-activities span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 5px;
+  height: 17px;
+  width: 1px;
+  background: #00a8c7;
+}
+
+.branch-activities span:last-child {
+  padding-right: 0;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes branchesHeroZoom {
+  from {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes branchesReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes branchCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .branches-main {
+    width: calc(100% - 45px);
+  }
+
+  .branch-images {
+    height: 125px;
+    grid-template-columns: minmax(0, 1fr) 35%;
+  }
+
+  .branch-card {
+    padding: 13px;
+    border-radius: 27px;
+  }
+
+  .branch-card h3 {
+    font-size: 17px;
+  }
+
+  .branch-activities span {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .branches-hero {
+    height: 450px;
+    min-height: 450px;
+  }
+
+  .branches-hero-bg img {
+    object-position: 55% center;
+  }
+
+  .branches-hero-content {
+    width: calc(100% - 40px);
+    margin-top: 40px;
+  }
+
+  .branches-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .branches-hero-content p {
+    font-size: 13px;
+  }
+
+  .branches-wave {
+    height: 35px;
+  }
+
+  .branches-main {
+    width: calc(100% - 30px);
+    padding-top: 28px;
+    padding-bottom: 30px;
+  }
+
+  .branches-heading h2 {
+    font-size: 28px;
+  }
+
+  .branches-heading p {
+    font-size: 12px;
+  }
+
+  .branches-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .branch-card {
+    padding: 15px;
+    border-radius: 28px;
+  }
+
+  .branch-images {
+    height: 150px;
+    grid-template-columns: minmax(0, 1fr) 37%;
+    gap: 9px;
+  }
+
+  .branch-school-image,
+  .branch-map {
+    border-radius: 24px;
+  }
+  .branch-map img {
+    object-fit: cover;
+  }
+
+  .branch-card h3 {
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+
+  .branch-location {
+    font-size: 13px;
+  }
+
+  .branch-timings p {
+    font-size: 12px;
+  }
+
+  .branch-activities {
+    padding: 9px 10px;
+  }
+
+  .branch-activities span {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .branches-main {
+    width: calc(100% - 22px);
+  }
+
+  .branch-images {
+    height: 120px;
+  }
+
+  .branch-card h3 {
+    font-size: 17px;
+  }
+
+  .branch-activities span {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .branches-page *,
+  .branches-page *::before,
+  .branches-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

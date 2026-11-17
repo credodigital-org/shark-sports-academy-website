@@ -1,0 +1,131 @@
+/* =====================================================
+   Design-match scale (desktop >= 901px)
+   The page CSS was authored ~30% smaller than the 1440px
+   mockups. These fluid sizes bring type and spacing up to
+   the design without touching the tablet/mobile rules.
+===================================================== */
+
+@media (min-width: 901px) {
+  /* hero */
+  .hero-content h1,
+  .about-hero-content h1,
+  .classes-hero-content h1,
+  .gallery-hero-content h1,
+  .branches-hero-content h1 {
+    font-size: clamp(44px, 4.4vw, 64px);
+  }
+  .hero-content p,
+  .about-hero-content p,
+  .classes-hero-content p,
+  .gallery-hero-content p,
+  .branches-hero-content p {
+    max-width: min(680px, 52vw);
+    font-size: clamp(15px, 1.4vw, 20px);
+  }
+  .primary-btn,
+  .about-admission-btn,
+  .classes-admission-btn,
+  .gallery-admission-btn,
+  .branches-admission-btn {
+    font-size: clamp(13px, 1vw, 15px);
+  }
+
+  /* section headings + intros */
+  .section h2,
+  .branches-title,
+  .about-section-title,
+  .mission-card-heading h2,
+  .testimonial-heading h2,
+  .branches-heading h2,
+  .classes-section-heading h2,
+  .gallery-heading h2 {
+    font-size: clamp(32px, 3.4vw, 48px);
+  }
+  .section-heading p,
+  .branches-heading p,
+  .classes-section-heading p,
+  .gallery-heading p {
+    font-size: clamp(14px, 1.15vw, 17px);
+  }
+  .small-btn {
+    font-size: clamp(13px, 1vw, 15px);
+  }
+
+  /* about */
+  .story-content p,
+  .mission-card > p,
+  .testimonial-review {
+    font-size: clamp(15px, 1.27vw, 18.5px);
+    line-height: 1.7;
+  }
+  .about-stat-text h3 { font-size: clamp(28px, 2.8vw, 40px); }
+  .about-stat-text p { font-size: clamp(13px, 1vw, 15px); }
+  .testimonial-person h3 { font-size: clamp(18px, 1.5vw, 22px); }
+  .testimonial-person span { font-size: clamp(12px, 1vw, 14px); }
+
+  /* branches page */
+  .branch-card h3 { font-size: clamp(22px, 2vw, 28px); }
+  .branch-location,
+  .branch-timings p { font-size: clamp(14px, 1.2vw, 17px); }
+  .branch-subheading strong { font-size: clamp(15px, 1.25vw, 18px); }
+  .branch-activities span { font-size: clamp(13px, 1.1vw, 16px); }
+
+  /* classes page */
+  .activity-card h3 { font-size: clamp(20px, 1.7vw, 24px); }
+  .activity-card p,
+  .service-card p { font-size: clamp(13px, 1.05vw, 15.5px); line-height: 1.65; }
+  .service-card h3 { font-size: clamp(18px, 1.5vw, 22px); }
+  .classes-benefits h3 { font-size: clamp(18px, 1.6vw, 22px); }
+  .classes-benefits li { font-size: clamp(15px, 1.25vw, 18px); }
+  .events-content h3 { font-size: clamp(18px, 1.6vw, 22px); }
+  .event-item h4 { font-size: clamp(15px, 1.3vw, 19px); }
+  .event-item p { font-size: clamp(14px, 1.15vw, 17px); }
+
+  /* gallery page */
+  .gallery-filters button,
+  .gallery-load-more button { font-size: clamp(13px, 1vw, 15px); }
+
+  /* footer */
+  .footer-about img { width: clamp(105px, 9vw, 130px); height: auto; }
+  .footer-about p,
+  .footer-links a,
+  .contact-item { font-size: clamp(14px, 1.2vw, 17px); }
+  .footer-links h3,
+  .footer-contact h3 { font-size: clamp(18px, 1.5vw, 21px); }
+  .footer-bottom p { font-size: 14px; }
+
+  /* home tiles: proportions from the mockup */
+  .home-activity-card { height: auto; aspect-ratio: 1 / 1; }
+  .gallery-image { height: auto; aspect-ratio: 421 / 508; }
+  .trainer-card { aspect-ratio: 1 / 1; height: auto; }
+  .home-branch-card { height: auto; aspect-ratio: 2.15 / 1; }
+  .home-branch-card .branch-overlay h3 { max-width: 320px; font-size: clamp(20px, 1.7vw, 24px); }
+  .activity-label { font-size: clamp(18px, 1.5vw, 22px); }
+
+  /* classes page cards */
+  .activities-grid { gap: 64px 28px; }
+  .activity-card { min-height: 236px; padding: 48px 28px 28px; }
+  .activity-icon,
+  .service-icon { width: 60px; height: 60px; top: -30px; }
+  .activity-icon svg,
+  .service-icon svg { width: 30px; height: 30px; }
+  .activity-card h3 { margin-bottom: 20px; }
+  .services-grid { gap: 28px; }
+  .service-card { min-height: 250px; padding: 48px 28px 28px; }
+  .classes-activities,
+  .classes-services { padding-top: 40px; padding-bottom: 40px; }
+  .classes-section-heading { margin-bottom: 56px; }
+
+  /* branches page cards */
+  .branches-grid { gap: 32px 28px; }
+  .branch-card { height: auto; min-height: 0; padding: 26px 24px 26px; }
+  .branch-images { height: clamp(190px, 17vw, 250px); gap: 14px; margin-bottom: 24px; }
+  .branch-card h3 { margin-bottom: 24px; }
+  .branch-location { margin-bottom: 14px; }
+  .branch-timings { padding-left: 46px; }
+  .branch-timings p { margin: 6px 0; }
+  .branch-activities { padding: 12px 14px; min-height: 60px; }
+}
+
+/* all widths: cards size to their content */
+.branch-card { height: auto; min-height: 0; }
